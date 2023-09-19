@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Ejercicio2</h1>
+
+    <img id="pajaro" onclick="cambiaPic()" src="img/pajaro.jpeg" width="360" height="360">
+
+    <script>
+        function cambiaPic() {
+            var image = document.getElementById('pajaro');
+
+            if (image.src.match("pajaro")) {
+
+                image.src = "img/gato.jpg";
+
+            } else if (image.src.match("gato")) {
+
+                image.src = "img/perro.jpeg";
+
+            } else if (image.src.match("perro")) {
+
+                image.src = "img/ardilla.jpeg";
+            } else {
+                image.src = "img/pajaro.jpeg";
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
