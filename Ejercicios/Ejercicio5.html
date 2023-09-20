@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+
+<body>
+    <button type="button" onclick="Español()">Bienvenida Español</button>
+    <button type="button" onclick="Ingles()">Bienvenida Ingles</button>
+    <button type="button" onclick="Ruso()">Bienvenida Ruso</button>
+
+    <p id="texto"></p>
+
+    <script>
+        function Español() {
+
+            document.getElementById('texto').innerHTML = 'BIENVENIDO A MI PAGINA';
+
+            var x = document.getElementById("texto");
+
+            x.style.color = "red"
+
+        }
+
+        function Ingles() {
+
+            document.getElementById('texto').innerHTML = 'WELCOME TO MY PAGE';
+
+            var x = document.getElementById("texto");
+
+            x.style.color = "green"
+
+        }
+
+        function Ruso() {
+
+            document.getElementById('texto').innerHTML = 'ДОБРО ПОЖАЛОВАТЬ НА МОЮ СТРАНИЦУ';
+
+            var x = document.getElementById("texto");
+
+            x.style.color = "blue"
+
+        }
+
+    </script>
+
+</body>
+
+</html>
