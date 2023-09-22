@@ -6,27 +6,21 @@
     <p> Escriba una función recursiva que calcule y devuelva la suma de todos los elementos de un array
         sumatorio (tamaño)
     </p>
-    <p id="demo"></p>
     <script>
-        let arr1 = [1, 2, 3];
-        var longitud = arr1.length-1;
+        let arr = [1,2,3];
 
         function sumatoria(longitud) {
 
-            if(longitud == 0){
-                
-            }else {
+            if(longitud === 0) return 0;
 
-                return arr1[longitud] + sumatoria(array.length-1);
-            }
+            return arr[longitud-1] + sumatoria(arr.length-1);
+            
 
             
            
         }
 
-        
-
-        console.log("El sumatorio es " + sumatoria);
+        console.log("El sumatorio es " + sumatoria(arr.length))
     </script>
 </body>
 
