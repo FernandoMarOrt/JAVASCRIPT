@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
+<head>
+    <title>Sumatorio</title>
+</head>
 <body>
-    <h2>JavaScript Array Recursivo</h2>
-    <p> Escriba una función recursiva que calcule y devuelva la suma de todos los elementos de un array
-        sumatorio (tamaño)
-    </p>
+<p> Escriba una función recursiva que calcule y devuelva la suma de todos los elementos de un array
+sumatorio (tamaño)</p>
     <script>
-        let arr = [1,2,3];
+        var arr1 = [1,4,3,1];
 
-        function sumatoria(longitud) {
-
-            if(longitud === 0) return 0;
-
-            return arr[longitud-1] + sumatoria(arr.length-1);
-            
-
-            
-           
+        function sumar(long) {
+        if(long===0){
+            return 0;
+        }else{
+            return arr1[long-1] + sumar(long-1);
         }
-
-        console.log("El sumatorio es " + sumatoria(arr.length))
+        
+        }
+    
+        console.log("El sumatorio es :"+sumar(arr1.length));
+    
     </script>
+    
 </body>
-
 </html>
