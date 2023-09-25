@@ -18,11 +18,8 @@
         principalmente en la región del noroeste del Pacífico en América del
         Norte.
 
-
-        BUSCAR UN FOOT DEL TAMAÑO DEL ARRAY E IR REDUCIENDO HASTA ENCONTRAR UNO GRANDE 
-
         <br><br>
-        Crea un programa con una función recursiva que diga cual es la
+        Crea un programa con una función recursiva que diga cuál es la
         secuencia de Big foot's (sin la big) más largas para un array dado
         Por ejemplo: <br><br>
         foot -> tamaño 4<br>
@@ -32,6 +29,28 @@
         <script>
             let arr = ["O", "F", "O", "O", "S", "T", "O", "F", "O", "O", "O", "T", "O", "F", "O", "O", "O", "O", "O", "T"];
             // ESCRIBE TU CÓDIGO AQUÍ
+
+            // Función recursiva para encontrar la longitud de la secuencia "foot"
+            function findFootLength(arr, index = 0, count = 0) {
+                // Condición de parada: si hemos recorrido todo el array
+                if (index >= arr.length - 2) {
+                    return count;
+                }
+
+                // Si encontramos una letra 'f' (mayúscula o minúscula), comprobamos si sigue la secuencia 'oot'
+                if ((arr[index] === "F") &&
+                    (arr[index + 1] === "O") &&
+                    (arr[index + 2] === "O") &&
+                    (arr[index + 3] === "T")) {
+                    return findFootLength(arr, index + 4, count + 4);
+                }
+
+                // Si no encontramos la secuencia, seguimos buscando
+                return findFootLength(arr, index + 1, count);
+            }
+
+            const footLength = findFootLength(arr);
+            console.log("Longitud de la secuencia 'FOoT':", footLength);
 
         </script>
 </body>

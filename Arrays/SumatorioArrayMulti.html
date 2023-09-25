@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RECURSIVIDAD</title>
+</head>
+
+<body>
+    <p>let array = [1,2,3,4];
+        Array.isArray(array); // true
+    </p>
+    <script>
+        let numeros = [1, [2, 3, 4], [8, 15, [5, 1]], 27];
+        console.log(numeros)
+
+
+        // Función recursiva para sumar todos los elementos de un array multidimensional
+        function sumarArrayMultidimensional(arr) {
+            let suma = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (Array.isArray(arr[i])) {
+                    // Si el elemento es un array, llamamos recursivamente a la función
+                    suma += sumarArrayMultidimensional(arr[i]);
+                } else {
+                    // Si el elemento es un número, lo sumamos
+                    suma += arr[i];
+                }
+            }
+            return suma;
+        }
+
+        const resultado = sumarArrayMultidimensional(numeros);
+        console.log("La suma de todos los elementos del array multidimensional es:", resultado);
+
+    </script>
+</body>
+
+</html>
