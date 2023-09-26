@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumerosEnArray</title>
+</head>
+
+<body>
+
+    <script>
+
+        let numeros = [1, [2, 3, 4], [8, 15, [5, 1]], 27];
+
+        function buscador(num, numeros) {
+
+
+            let cantidad = 0;
+
+            for (let i = 0; i < numeros.length; i++) {
+
+                if (Array.isArray(numeros[i])) {
+
+                    for (let j = 0; j < numeros.length; j++) {
+
+
+                        if (Array.isArray(numeros[i][j])) {
+
+                            for (let z = 0; z < numeros.length; z++) {
+                                if (num === numeros[i][j][z]) {
+                                    cantidad++;
+                                }
+                            }
+                        }
+
+                        if (num === numeros[i][j]) {
+
+                            cantidad++;
+
+                        }
+                    }
+
+                } else {
+
+                    if (num === numeros[i]) {
+
+                        cantidad++;
+
+                    }
+                }
+            }
+
+            return cantidad;
+        }
+
+
+        console.log(buscador(1, numeros));
+
+
+
+    </script>
+
+</body>
+
+</html>

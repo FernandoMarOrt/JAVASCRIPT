@@ -29,29 +29,38 @@
         <script>
             let arr = ["O", "F", "O", "O", "S", "T", "O", "F", "O", "O", "O", "T", "O", "F", "O", "O", "O", "O", "O", "T"];
             // ESCRIBE TU CÓDIGO AQUÍ
-
-            // Función recursiva para encontrar la longitud de la secuencia "foot"
-            function findFootLength(arr, index = 0, count = 0) {
-                // Condición de parada: si hemos recorrido todo el array
-                if (index >= arr.length - 2) {
-                    return count;
+            function buscaFoot(num, arr) {
+                //condicion de parada, si es 3 devuelvo 0
+                if (num === 3) return 0;
+                //busco el bigfoot de tam num
+                console.log("buscando un bigfoot de tamaño: " + num)
+                for (let i = 0; i < arr.length - num + 1; i++) {
+                    //recorro todo el array
+                    //coloco dos punteros y los voy moviendo
+                    let posi = i;
+                    let posj = i;
+                    //lo primero que debe de encontrar una F
+                    if (arr[i] === "F") {
+                        while (posj < arr.length && arr[posj + 1] === "O") {
+                            //si esto es asi, la posj le sumo 1
+                            posj++;
+                            //finaliza con una T
+                            //si ya la siguiente es T tengo foot
+                            if (arr[posj + 1] === "T") {
+                                //posj++;
+                                //le sumo 1 porque estoy contando las casillas
+                                if ((posj - posi + 2) == num) {
+                                    return num;
+                                }
+                            }
+                        }
+                    }
                 }
-
-                // Si encontramos una letra 'f' (mayúscula o minúscula), comprobamos si sigue la secuencia 'oot'
-                if ((arr[index] === "F") &&
-                    (arr[index + 1] === "O") &&
-                    (arr[index + 2] === "O") &&
-                    (arr[index + 3] === "T")) {
-                    return findFootLength(arr, index + 4, count + 4);
-                }
-
-                // Si no encontramos la secuencia, seguimos buscando
-                return findFootLength(arr, index + 1, count);
+                return buscaFoot(num - 1, arr);
             }
-
-            const footLength = findFootLength(arr);
-            console.log("Longitud de la secuencia 'FOoT':", footLength);
-
+            //llama a la funcion con un numero en concreto
+            //console.log(buscaFoot(arr.length, arr));
+            console.log("La cadena más larga tiene un tamaño de :" + buscaFoot(arr.length, arr))
         </script>
 </body>
 
