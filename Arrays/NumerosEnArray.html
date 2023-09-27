@@ -10,57 +10,29 @@
 <body>
 
     <script>
-
-        let numeros = [1, [2, 3, 4], [8, 15, [5, 1]], 27];
-
-        function buscador(num, numeros) {
-
-
-            let cantidad = 0;
-
-            for (let i = 0; i < numeros.length; i++) {
-
-                if (Array.isArray(numeros[i])) {
-
-                    for (let j = 0; j < numeros.length; j++) {
-
-
-                        if (Array.isArray(numeros[i][j])) {
-
-                            for (let z = 0; z < numeros.length; z++) {
-                                if (num === numeros[i][j][z]) {
-                                    cantidad++;
-                                }
-                            }
-                        }
-
-                        if (num === numeros[i][j]) {
-
-                            cantidad++;
-
-                        }
-                    }
-
-                } else {
-
-                    if (num === numeros[i]) {
-
-                        cantidad++;
-
-                    }
+        let numeros = [1,[2,3,4],[8,15,[5,1]],27];
+        console.log(numeros)
+        const Cuantos = (arr,num)=>{
+            let c=0;
+            for (let i=0;i<arr.length;i++){
+                //si es un array -> llamada
+                //sino compruebo si es el mismo
+                if (Array.isArray(arr[i])){
+                    c+=Cuantos(arr[i],num)
+                }else{
+                    if (arr[i]===num) c++;
                 }
             }
-
-            return cantidad;
+            return c;
         }
-
-
-        console.log(buscador(1, numeros));
-
-
-
+        // ESCRIBE TU CÓDIGO AQUÍ
+        console.log(Cuantos(numeros,5))
+        console.log(Cuantos(numeros,1))
+        console.log(Cuantos(numeros,31))
     </script>
 
 </body>
 
 </html>
+
+
