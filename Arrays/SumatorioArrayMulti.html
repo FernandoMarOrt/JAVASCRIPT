@@ -14,15 +14,15 @@
         console.log(numeros)
 
 
-        // Función recursiva para sumar todos los elementos de un array multidimensional
+        //Función recursiva para sumar todos los elementos de un array multidimensional
         function sumarArrayMultidimensional(arr) {
             let suma = 0;
             for (let i = 0; i < arr.length; i++) {
                 if (Array.isArray(arr[i])) {
-                    // Si el elemento es un array, llamamos recursivamente a la función
+                    // Si el elemento es un array, llamo otra vez a la funcion
                     suma += sumarArrayMultidimensional(arr[i]);
                 } else {
-                    // Si el elemento es un número, lo sumamos
+                    // Si el elemento es un numero, lo sumo
                     suma += arr[i];
                 }
             }
