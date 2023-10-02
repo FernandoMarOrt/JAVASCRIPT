@@ -1,0 +1,51 @@
+function esCapicua(numero) {
+// Convierte el número a una cadena para facilitar la manipulación
+let numeroStr = numero.toString();
+
+// Caso base: Si la cadena tiene 0 o 1 dígito, es capicúa por definición
+if (numeroStr.length <= 1) { return true; } // Compara el primer y último dígito de la cadena if (numeroStr[0]
+    !==numeroStr[numeroStr.length - 1]) { return false; } // Llama recursivamente a la función con la cadena sin el
+    primer y último dígito return esCapicua(numeroStr.slice(1, -1)); } // Ejemplo de uso const numero=12321; // Cambia
+    el número aquí if (esCapicua(numero)) { console.log(numero + " es capicúa." ); } else { console.log(numero
+    + " no es capicúa." ); } <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>BIG FOOT</title>
+    </head>
+
+    <body>
+
+        <script>
+            function esCapicua(numero) {
+                // Convierte el número a una cadena para facilitar la manipulación
+                let numeroStr = numero.toString();
+
+                // Caso base: Si la cadena tiene 0 o 1 dígito, es capicúa por definición
+                if (numeroStr.length <= 1) {
+                    return true;
+                }
+
+                // Compara el primer y último dígito de la cadena
+                if (numeroStr[0] !== numeroStr[numeroStr.length - 1]) {
+                    return false;
+                }
+
+                // Llama recursivamente a la función con la cadena sin el primer y último dígito
+                return esCapicua(numeroStr.slice(1, -1));
+            }
+
+            // Ejemplo de uso
+            const numero = 12321; // Cambia el número aquí
+            if (esCapicua(numero)) {
+                console.log(numero + " es capicúa.");
+            } else {
+                console.log(numero + " no es capicúa.");
+            }
+
+
+
+        </script>
+    </body>
+
+    </html>
