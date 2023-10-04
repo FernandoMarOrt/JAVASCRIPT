@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>STALINGRADO</h1>
+    <p id="matriz"></p>
+    <h2 id="ganador"></h2>
+
+    <script>
+        let battlefield = [
+            ["0", "1", "", "", "R", "", "", "", ""],
+            ["2", "A", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "", ""],
+            ["", "", "", "", "R", "", "", "A", "A"],
+            ["", "", "", "", "R", "", "", "A", "A"]
+        ];
+
+
+        for (let i = 0; i < battlefield.length; i++) {
+
+            for (let j = 0; j < battlefield.length; j++) {
+
+                    if(battlefield[i][j] === "R"){
+
+                        let numero = j;
+
+                        for (let z = 0; z < battlefield.length; z++) {
+                            
+                            if(battlefield[z][numero]){
+
+                                console.log("fila de R encontradas");
+
+                            }else{
+                                console.log("se rompe la fila de r");
+                                break;
+                            }
+                            
+                        }
+
+                    }
+                
+            }
+            
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
