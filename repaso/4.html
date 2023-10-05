@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>HEAVEN</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Heaven</h1>
+    <script>
+        let mapa =
+            [['*', '', '', '', '', ''],
+            ['*', '', '', '', '', ''],
+            ['*', '', '', '', '', ''],
+            ['*', '', '', '', '', ''],
+            ['*', '*', '*', '*', '*', '*']];
+
+        function heaven(arr, i, j) {
+
+            numFilas = arr.length - 1;
+            numColumnas = arr[i].length - 1;
+
+            //Al haber visto la esquina superior izq y es correcta
+            //empezamos a comprobar alrededores
+
+            //Compruebo arriba
+            if (i > 0) {
+                if (arr[i - 1][j] == "*") {
+                    arr[i][j] = "X";
+                    return heaven(arr, i - 1, j);
+                }
+            }
+
+            //Compruebo abajo
+            if (i < arr.length - 1) {
+                if (arr[i + 1][j] == "*") {
+                    arr[i][j] = "X";
+                    return heaven(arr, i + 1, j);
+                }
+            }
+
+            //Compruebo dcha
+            if (j < arr[i].length - 1) {
+                if (arr[i][j + 1] == "*") {
+                    arr[i][j] = "X";
+                    return heaven(arr, i, j + 1);
+                }
+            }
+
+            //Compruebo izq
+            if (j > 0) {
+                if (arr[i][j - 1] == "*") {
+                    arr[i][j] = "X";
+                    return heaven(arr, i, j - 1);
+                }
+            }
+
+            if (arr[numFilas][numColumnas] == "*"
+                || arr[numFilas - 1][numColumnas] == "X"
+                || arr[numFilas][numColumnas - 1] == "X") {
+
+                document.write("SEMOS LIBRES !!");
+            }
+            document.write("<br/>");
+        }
+
+        function imprimirMapa(arr) {
+
+            for (let i = 0; i < arr.length; i++) {
+
+                for (let j = 0; j < arr[i].length; j++) {
+
+                    document.write("[" + arr[i][j] + "]");
+                }
+                document.write("<br/>");
+            }
+
+            document.write("<br/>");
+        }
+
+        imprimirMapa(mapa);
+        heaven(mapa, 0, 0);
+        document.write("<br/>");
+        imprimirMapa(mapa);
+    </script>
+</body>
+
+</html>
