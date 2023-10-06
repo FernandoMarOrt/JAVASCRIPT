@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CAPICUA</title>
+</head>
+
+<body>
+    <p id="txt"></p>
+    <script>
+        let arr =
+            ["5", "4", "6", "5", "6", "4", "3", "F", "O", "O", "O", "T", "O", "F", "O", "O", "R", "O", "O", "T", "O"];
+        // ESCRIBE TU CÓDIGO AQUÍ
+
+
+
+        for (let i = 0; i < arr.length; i++) {
+
+            if (i <= arr.length - 2) {
+
+                let numero = arr[i] + arr[i + 1] + arr[i + 2];
+
+                if (esCapicua(numero)) {
+                    console.log("El string: " + numero + " Es capicua");
+                }
+
+
+
+                let numero2 = arr[i] + arr[i+1] + arr[i+2] + arr[i+3] + arr[i+4];
+
+                if (esCapicua(numero2)) {
+                    console.log("El string: " + numero2 + " Es capicua");
+                }
+            }
+
+        }
+
+
+        function esCapicua(numero) {
+            let numeroStr = numero.toString();
+
+            if (numeroStr.length <= 1) {
+                return true;
+            }
+            if (numeroStr[0] !== numeroStr[numeroStr.length - 1]) {
+                return false;
+            }
+
+            return esCapicua(numeroStr.slice(1, -1));
+        }
+
+    </script>
+</body>
+
+</html>
