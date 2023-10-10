@@ -9,8 +9,8 @@
 
     <script>
         let battlefield = [
-            ["0", "1", "", "", "R", "", "", "", ""],
-            ["2", "A", "", "", "R", "", "", "", ""],
+            ["A", "A", "", "", "R", "", "", "", ""],
+            ["A", "A", "", "", "R", "", "", "", ""],
             ["", "", "", "", "R", "", "", "", ""],
             ["", "", "", "", "R", "", "", "", ""],
             ["", "", "", "", "R", "", "", "", ""],
@@ -25,28 +25,17 @@
 
             for (let j = 0; j < battlefield.length; j++) {
 
-                    if(battlefield[i][j] === "R"){
+                if (battlefield[i][j] === "A" ) {
 
-                        let numero = j;
+                    battlefield[i][j] = "X";
 
-                        for (let z = 0; z < battlefield.length; z++) {
-                            
-                            if(battlefield[z][numero]){
 
-                                console.log("fila de R encontradas");
+                }
 
-                            }else{
-                                console.log("se rompe la fila de r");
-                                break;
-                            }
-                            
-                        }
-
-                    }
-                
             }
-            
+
         }
+            
 
 
 

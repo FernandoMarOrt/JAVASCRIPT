@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+    <script>
+        var txt = "";
+        const muestra = (valor, index, array) => {
+            txt += index + ": " + valor + " ";
+            console.log(txt)
+        }
+        var dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+        let numeros = [1, 2, 3, 4, 5, 6, 7];
+
+        console.log(numeros.map((v) => v+v)) //Para mostrar todo el array , puedo sumarle el propio elemento multiplicarlo x2 erc
+        console.log(numeros.map((v,i) => v+i)) //La i simula el indice es decir por cada pasada al siguiente elemento va sumando 1 (empienza en 0)
+        console.log(numeros.map((v) => { return (v + v) }))
+
+        console.log(numeros.find((v) => v > 5)) //Para buscar solo 1
+        console.log(numeros.find((v) => { return (v > 5) }))
+
+                                                                                                            //Puede usarse igual que un if
+        console.log(dias.filter((v) => v.length > 5 && v.length < 7)) //Para buscar en un grupo solo 1 console.log(dias.filter((v) => v.length > 6 && v.length < 8))
+        console.log(dias.filter((v) => { return (v.length > 5 && v.length < 7) }))
+
+
+        //SI ES UN ARRAY DENTRO DE UN ARRAY SE USARIA FLAR PARA PODER ACCEDER A ELLOS   
+        var dias = ['lunes', 'martes', 'miércoles', ['jueves', 'viernes'], 'sabado', 'domingo'];
+
+        console.log(dias.flat().filter((v) => v.length > 5 && v.length < 7)) 
+        console.log(dias.flat().filter((v) => { return (v.length > 5 && v.length < 7) }))
+
+    </script>
+
+</body>
+
+</html>
