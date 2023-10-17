@@ -19,7 +19,7 @@
 
         var unica = cars.flat(Infinity).concat(carrakos.flat(Infinity).filter(v1 => !cars.flat(Infinity).find(v2 => v1 === v2)));
 
-        console.log(unica);
+        console.log(unica); 
 
 
         //Alguien sabría decirme los coches de carrakos que no estén en cars?
@@ -33,7 +33,8 @@
         var buddies = [{ firstName: "Chuck", lastName: "Norris", car: "Honda" }, { firstName: "Yakie", lastName: "Chang", car: "BMW" }, { firstName: "Bruce", lastName: "Lee", car: "Honda" }, { firstName: "Steven", lastName: "Seagal", car: "Lada" }];
         //-Nombre y apellidos de los buddies que usan un Honda
 
-        console.log(buddies.filter(({ car }) => car == "Honda"))
+        resultado = (buddies.filter(({ car }) => car == "Honda"))
+        console.log(resultado.map(v=>v.firstName+ " " +v.lastName))
 
         //-Marcas utilizadas por los buddies
 
