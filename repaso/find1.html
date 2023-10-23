@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Se piden los elementos del array 1 mayor de 10 pero que estén en el segundo array
+
+        const array1 = [5, 12, 8, 130, 44];
+        const array2 = [5, 8, 130, 44];
+        const array3 = [5, 8, 44];
+
+        var godosJSON='{"reyesgodos":[{"nombre":"Alarico","hijos":["Atanagildo","Recesvinto","Leovigildo"]},{"nombre":"RecaredoI","hijos":["Sisebuto","RecaredoII"]},{"nombre":"Suintila","hijos":["Chindasvinto","Recesvinto","Wamba","Égica","Witiza","Rodrigo"]}]} ';
+
+
+        //Se piden los elementos del array 1 mayor de 10 pero que estén en el segundo array
+        console.log(array1.filter(a1 => array2.find(a2 => a2 === a1) && a1 > 10));
+
+
+
+        //Se piden los elementos del array 1 mayor de 10 pero que estén en el segundo array y no en el tercero
+        console.log(array1.filter(a1 => array2.find(a2 => a2 === a1) && !array3.find(a2 => a2 === a1) && a1 > 10));
+
+
+        //Se pide el nombre del padre de los godos que se llamen Recesvinto (solución Alarico y Suintila)
+        console.log(JSON.parse(godosJSON).reyesgodos.filter(rey => rey.hijos.find(hijo => hijo === "Recesvinto")).map(rey => rey.nombre));
+
+        //Se pide el nombre del padre de los godos que se llamen Recesvinto y que no tengan un hijo llamado Leovigildo (solución Suintila
+        console.log(JSON.parse(godosJSON).reyesgodos.filter(rey => rey.hijos.find(hijo => hijo === "Recesvinto") && !rey.hijos.find(hijo => hijo === "Leovigildo")).map(rey => rey.nombre));
+
+
+
+
+        //¿Cuántas veces aparece la palabra Volvo en newcars en una línea?
+
+        console.log(newcars.flat(Infinity).filter(cars => cars === "Volvo").length);
+
+        
+        //Ver si una marca es trendy. Una marca es trendy si esta es utilizada por más de un buddy
+
+        const carCounts = cars.concat(carrakos, newcars).flat(Infinity).map(car => ({ car, count: buddies.filter(buddy => buddy.car === car).length }));
+
+        const trendy = carCounts.filter(brand => brand.count > 1).map(brand => brand.car);
+
+        console.log(trendy);
+
+        //Muestra por consola las marcas del array newcars que usen los buddies, que están obviamente en newcars pero que no estén en el array xungas.
+        
+        console.log(newcars.flat(Infinity).filter(cars =>  carrakos.flat(Infinity).find(carrako => carrako === cars)));
+
+    </script>
+</body>
+
+</html>
