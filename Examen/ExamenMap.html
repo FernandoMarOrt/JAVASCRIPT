@@ -25,25 +25,28 @@
         // ESCRIBE AQUÍ TU CÓDIGO
         const coloca = (nombre, cuantos) => {
 
-            if (numclientaUno < cuantos) {
-
-                numclientaUno = cuantos;
-                clientaUno = nombre;
-
+            if (cuantos > numuno) {
+                if (nombre != uno) {
+                    tres = dos; numtres = numdos;
+                    dos = uno; numdos = numuno;
+                }
+                uno = nombre;
+                numuno = cuantos;
+                return 0;
             }
-
-            if (numclientaDos < cuantos && clientaUno != nombre) {
-
-                numclientaDos = cuantos;
-                clientaDos = nombre;
-
+            if (cuantos > numdos && nombre != uno) {
+                if (nombre != dos) {
+                    tres = dos; numtres = numdos;
+                }
+                dos = nombre;
+                numdos = cuantos;
+                return 0;
             }
+            if (cuantos > numtres && nombre != uno && nombre != dos) {
 
-            if (numclientaDos < cuantos && numclientaDos < cuantos && clientaUno != nombre &&  clientaDos != clientaDos) {
-
-                numclientaTres = cuantos;
-                clientaDosTres = nombre;
-
+                tres = nombre;
+                numtres = cuantos;
+                return 0;
             }
 
         }
