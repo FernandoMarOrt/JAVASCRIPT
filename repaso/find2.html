@@ -27,11 +27,7 @@
 
         //Ver si una marca es trendy. Una marca es trendy si esta es utilizada por más de un buddy
 
-        const carCounts = cars.concat(carrakos, newcars).flat(Infinity).map(car => ({ car, count: buddies.filter(buddy => buddy.car === car).length }));
-
-        const trendy = carCounts.filter(brand => brand.count > 1).map(brand => brand.car);
-
-        console.log(trendy);
+        console.log(buddies.map(buddie => buddie.car).filter((car, index, array) => array.indexOf(car) !== index && array.lastIndexOf(car) === index));
 
 
         //Muestra por consola las marcas del array newcars que usen los buddies, que están obviamente en newcars pero que no estén en el array xungas.

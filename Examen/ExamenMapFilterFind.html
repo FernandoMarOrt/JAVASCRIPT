@@ -32,14 +32,29 @@
         }, { firstName: "Steven", lastName: "Seagal", car: "Lada" }];
 
         let xungas = ["Honda", "Lada"]
+
         //EJERCICIO 1
         //¿Cuántas veces aparece la palabra Volvo en newcars en una línea?
         console.log(newcars.flat(Infinity).filter(newcar => newcar === "Volvo").length)
+
         //EJERCICIO 2
-        //Ver si una marca es trendy. Una marca es trendy si esta es utilizada por más de un buddy.
-        let trendy = (buddies.map())
+        //Ver si una marca es trendy. Una marca es trendy si esta es utilizada por más deun buddy.
+        let marcasTrendy = [];
+        buddies.map(buddie => {
+            let contador = buddies.filter(b => b.car === buddie.car).length;
+            if (contador > 1 && !marcasTrendy.includes(buddie.car)) {
+                marcasTrendy.push(buddie.car);
+            }
+        });
+
+        console.log(marcasTrendy);
+
         //EJERCICIO 3
-        //EJERCICIO 4
+        //Muestra por consola las marcas del array newcars que usen los buddies, que están obviamente en newcars pero que no estén en el array xungas.
+        console.log(newcars.flat(Infinity).filter(marca => buddies.some(buddie => buddie.car === marca) && !xungas.includes(marca)));
+
+
+
     </script>
 </body>
 
