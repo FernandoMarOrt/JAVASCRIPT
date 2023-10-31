@@ -34,8 +34,6 @@
         console.log(JSON.parse(godosJSON).reyesgodos.filter(rey => rey.hijos.find(hijo => hijo === "Recesvinto") && !rey.hijos.find(hijo => hijo === "Leovigildo")).map(rey => rey.nombre));
 
 
-
-
         //¿Cuántas veces aparece la palabra Volvo en newcars en una línea?
 
         console.log(newcars.flat(Infinity).filter(cars => cars === "Volvo").length);
