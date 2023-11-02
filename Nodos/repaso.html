@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let carrakos = ["Chevrolet", "Tesla", "BMW", ["Honda", "Infiniti", ["Lexus", "Mercedes", "Kia"], "Hyunday"], ["Mazda", "Mercedes", "Jeep", ["KTM", "Nissan", "Isuzu"]]];
+        let xungos = [{ nombre: "Bruce Lee", carros: ["Chevrolet", "Tesla", "BMW"] }, { nombre: "YakiChan", carros: ["Lexus", "Mercedes", "Kia"] }]
+
+        let obj = document.getElementById("carrakos");
+        let visualiza = (arr, obj) => {
+            arr.map(e => {
+                if (Array.isArray(e)) {
+                    let newobj = document.createElement("ul");
+                    obj.appendChild(newobj)
+                    visualiza(e, newobj)
+                } else {
+                    let nodoCoche = document.createElement("li");
+                    let texto = document.createTextNode(e + encuentra(e, xungos));
+                    nodoCoche.appendChild(texto);
+                    obj.appendChild(nodoCoche);
+                }
+            })
+        }
+
+        visualiza(carrakos, obj);
+
+        function encuentra(marca, arr) {
+            let elemento = arr.find(x => x.carros.find(c => c == marca))
+            if (elemento == undefined) {
+                return ""
+            } else {
+                return " de " + elemento.nombre
+            }
+        }
+
+
+
+
+
+
+        function contar(lista, elemento) {
+            let count = 0;
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i] === elemento) {
+                    count++;
+                }
+            }
+            return count;}
+        newlista = lista1.concat(lista2);
+        newlista.sort();
+        newlista = newlista.filter((f, i, arr) => i > 0 && arr[i] == arr[i - 1]);
+
+
+
+
+
+
+        lista1.sort();
+        lista1 = lista1.filter((f, i, arr) => i == 0 || arr[i] != arr[i - 1]);
+        lista2.sort();
+        lista2 = lista2.filter((f, i, arr) => i == 0 || arr[i] != arr[i - 1]);
+        console.log(lista1);
+        console.log(lista2);
+
+        // Ejemplo de uso
+        const lista = ['manzana', 'pera', 'manzana', 'limon', 'manzana'];
+        const elemento = 'manzana';
+
+        const occurrences = contar(lista, elemento);
+        console.log(`El elemento "${elemento}" aparece ${occurrences} veces en la lista.`);
+
+
+
+    </script>
+</body>
+
+</html>
